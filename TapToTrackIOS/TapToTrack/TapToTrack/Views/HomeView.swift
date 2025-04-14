@@ -53,15 +53,17 @@ struct HomeView: View {
         }
         .onAppear {
             viewModel.processQueuedPushes()
-        }
-        .onAppear {
             viewModel.loadLogs()
+        }
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)) { _ in
+            viewModel.processQueuedPushes()
         }
     }
 
     private func logPress(type: String) {
-        viewModel.addLog(type: type)
+        viewModel.logPush(type: type)
     }
+    
 }
 
 struct PressButton: View {

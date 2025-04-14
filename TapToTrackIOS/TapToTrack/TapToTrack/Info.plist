@@ -15,5 +15,11 @@
 			</array>
 		</dict>
 	</array>
+	<key>NSBlueoothAlwaysUsageDescription</key>
+	<string>This app uses bluetooth to connect to flic buttons</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>bluetooth-central</string>
+	</array>
 </dict>
 </plist>

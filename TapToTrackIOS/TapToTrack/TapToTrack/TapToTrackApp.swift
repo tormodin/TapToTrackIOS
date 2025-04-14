@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import flic2lib
 
 @main
 struct TapToTrackApp: App {
@@ -20,12 +21,14 @@ struct TapToTrackApp: App {
                     
                 }
                 .onAppear {
+                    FlicManager.shared.configure()
                     viewModel.processQueuedPushes()
-                }
+                } 
 
         }
     }
 
+    
     private func handleIncomingURL(_ url: URL) {
         guard let components = URLComponents(url: url, resolvingAgainstBaseURL: false),
               components.scheme == "taptrack",
@@ -37,7 +40,7 @@ struct TapToTrackApp: App {
         }
 
         print("📡 Received tap of type: \(type)")
-        TapLogViewModel.shared.queuePush(type: type)
+        TapLogViewModel.shared.logPush(type: type)
     }
 
 }

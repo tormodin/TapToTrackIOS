@@ -11,6 +11,7 @@ import SwiftUI
 @MainActor
 class TapLogViewModel: ObservableObject {
     static let shared = TapLogViewModel()
+    private let fileQueue = DispatchQueue(label: "com.tapToTrack.fileQueue")
     
     private let pendingPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("pendingLogs.json")
 
@@ -54,37 +55,34 @@ class TapLogViewModel: ObservableObject {
         saveLogs()
     }
 
+    func logPush(type: String) {
+        if logs.isEmpty {
+            print("⏳ Not ready yet, queuing push")
+            queuePush(type: type)
+        } else {
+            addLog(type: type)
+        }
+    }
+
     func queuePush(type: String) {
-        var pending: [String] = []
-
-        // Load existing pending pushes
-        if let data = try? Data(contentsOf: pendingPath),
-           let saved = try? JSONDecoder().decode([String].self, from: data) {
-            pending = saved
-        }
-
+        let suite = UserDefaults(suiteName: "group.com.dittnamn.TapToTrack")
+        var pending = suite?.stringArray(forKey: "pendingPushes") ?? []
         pending.append(type)
-
-        // Save updated list
-        if let data = try? JSONEncoder().encode(pending) {
-            try? data.write(to: pendingPath)
-        }
-
+        suite?.set(pending, forKey: "pendingPushes")
         print("📥 Queued push: \(type)")
     }
+
     func processQueuedPushes() {
-        guard let data = try? Data(contentsOf: pendingPath),
-              let saved = try? JSONDecoder().decode([String].self, from: data) else { return }
+        let suite = UserDefaults(suiteName: "group.com.dittnamn.TapToTrack")
+        let saved = suite?.stringArray(forKey: "pendingPushes") ?? []
 
         for type in saved {
             addLog(type: type)
-            print("📤 Processed queued push: \(type)")
+            print("📤 Processed queued push from App Group: \(type)")
         }
 
-        // Clear pending
-        try? FileManager.default.removeItem(at: pendingPath)
+        suite?.removeObject(forKey: "pendingPushes")
     }
-
 
 
 }

@@ -6,6 +6,17 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		1CF4DB962DA8B8D200AD5A32 /* TapToTrackNotificationService.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1CF4DB8F2DA8B8D200AD5A32 /* TapToTrackNotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1CF4DBA72DA99C6100AD5A32 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1CF4DBA52DA99C6100AD5A32 /* README.md */; };
+		1CF4DBA82DA99C6100AD5A32 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 1CF4DBA12DA99C6100AD5A32 /* CHANGELOG.md */; };
+		1CF4DBA92DA99C6100AD5A32 /* LICENCE (for the flic2lib binary).txt in Resources */ = {isa = PBXBuildFile; fileRef = 1CF4DBA42DA99C6100AD5A32 /* LICENCE (for the flic2lib binary).txt */; };
+		1CF4DBAA2DA99C6100AD5A32 /* LICENCE (for the documentation and source code).txt in Resources */ = {isa = PBXBuildFile; fileRef = 1CF4DBA32DA99C6100AD5A32 /* LICENCE (for the documentation and source code).txt */; };
+		1CF4DBAB2DA99C6100AD5A32 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 1CF4DBA02DA99C6100AD5A32 /* .gitignore */; };
+		1CF4DBAD2DA99CAC00AD5A32 /* flic2lib.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CF4DBA22DA99C6100AD5A32 /* flic2lib.xcframework */; };
+		1CF4DBAE2DA99CAC00AD5A32 /* flic2lib.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1CF4DBA22DA99C6100AD5A32 /* flic2lib.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		1CBB70C22D948F100099286E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -21,12 +32,51 @@
 			remoteGlobalIDString = 1CBB70B02D948F0F0099286E;
 			remoteInfo = TapToTrack;
 		};
+		1CF4DB942DA8B8D200AD5A32 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1CBB70A92D948F0F0099286E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1CF4DB8E2DA8B8D200AD5A32;
+			remoteInfo = TapToTrackNotificationService;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1CF4DB972DA8B8D200AD5A32 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				1CF4DB962DA8B8D200AD5A32 /* TapToTrackNotificationService.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1CF4DBAF2DA99CAC00AD5A32 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1CF4DBAE2DA99CAC00AD5A32 /* flic2lib.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1CBB70B12D948F0F0099286E /* TapToTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TapToTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CBB70C12D948F100099286E /* TapToTrackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TapToTrackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CBB70CB2D948F110099286E /* TapToTrackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TapToTrackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CF4DB8F2DA8B8D200AD5A32 /* TapToTrackNotificationService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TapToTrackNotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CF4DBA02DA99C6100AD5A32 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		1CF4DBA12DA99C6100AD5A32 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
+		1CF4DBA22DA99C6100AD5A32 /* flic2lib.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = flic2lib.xcframework; sourceTree = "<group>"; };
+		1CF4DBA32DA99C6100AD5A32 /* LICENCE (for the documentation and source code).txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "LICENCE (for the documentation and source code).txt"; sourceTree = "<group>"; };
+		1CF4DBA42DA99C6100AD5A32 /* LICENCE (for the flic2lib binary).txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "LICENCE (for the flic2lib binary).txt"; sourceTree = "<group>"; };
+		1CF4DBA52DA99C6100AD5A32 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -36,6 +86,13 @@
 				Info.plist,
 			);
 			target = 1CBB70B02D948F0F0099286E /* TapToTrack */;
+		};
+		1CF4DB9B2DA8B8D200AD5A32 /* Exceptions for "TapToTrackNotificationService" folder in "TapToTrackNotificationService" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 1CF4DB8E2DA8B8D200AD5A32 /* TapToTrackNotificationService */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -58,6 +115,14 @@
 			path = TapToTrackUITests;
 			sourceTree = "<group>";
 		};
+		1CF4DB902DA8B8D200AD5A32 /* TapToTrackNotificationService */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				1CF4DB9B2DA8B8D200AD5A32 /* Exceptions for "TapToTrackNotificationService" folder in "TapToTrackNotificationService" target */,
+			);
+			path = TapToTrackNotificationService;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CF4DBAD2DA99CAC00AD5A32 /* flic2lib.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +148,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1CF4DB8C2DA8B8D200AD5A32 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -91,7 +164,9 @@
 				1CBB70B32D948F0F0099286E /* TapToTrack */,
 				1CBB70C42D948F100099286E /* TapToTrackTests */,
 				1CBB70CE2D948F110099286E /* TapToTrackUITests */,
+				1CF4DB902DA8B8D200AD5A32 /* TapToTrackNotificationService */,
 				1CBB70B22D948F0F0099286E /* Products */,
+				1CF4DBA62DA99C6100AD5A32 /* flic2lib-ios-1.2.0 */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,8 +176,22 @@
 				1CBB70B12D948F0F0099286E /* TapToTrack.app */,
 				1CBB70C12D948F100099286E /* TapToTrackTests.xctest */,
 				1CBB70CB2D948F110099286E /* TapToTrackUITests.xctest */,
+				1CF4DB8F2DA8B8D200AD5A32 /* TapToTrackNotificationService.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		1CF4DBA62DA99C6100AD5A32 /* flic2lib-ios-1.2.0 */ = {
+			isa = PBXGroup;
+			children = (
+				1CF4DBA02DA99C6100AD5A32 /* .gitignore */,
+				1CF4DBA12DA99C6100AD5A32 /* CHANGELOG.md */,
+				1CF4DBA22DA99C6100AD5A32 /* flic2lib.xcframework */,
+				1CF4DBA32DA99C6100AD5A32 /* LICENCE (for the documentation and source code).txt */,
+				1CF4DBA42DA99C6100AD5A32 /* LICENCE (for the flic2lib binary).txt */,
+				1CF4DBA52DA99C6100AD5A32 /* README.md */,
+			);
+			path = "flic2lib-ios-1.2.0";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -115,10 +204,13 @@
 				1CBB70AD2D948F0F0099286E /* Sources */,
 				1CBB70AE2D948F0F0099286E /* Frameworks */,
 				1CBB70AF2D948F0F0099286E /* Resources */,
+				1CF4DB972DA8B8D200AD5A32 /* Embed Foundation Extensions */,
+				1CF4DBAF2DA99CAC00AD5A32 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				1CF4DB952DA8B8D200AD5A32 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				1CBB70B32D948F0F0099286E /* TapToTrack */,
@@ -176,6 +268,28 @@
 			productReference = 1CBB70CB2D948F110099286E /* TapToTrackUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		1CF4DB8E2DA8B8D200AD5A32 /* TapToTrackNotificationService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1CF4DB9A2DA8B8D200AD5A32 /* Build configuration list for PBXNativeTarget "TapToTrackNotificationService" */;
+			buildPhases = (
+				1CF4DB8B2DA8B8D200AD5A32 /* Sources */,
+				1CF4DB8C2DA8B8D200AD5A32 /* Frameworks */,
+				1CF4DB8D2DA8B8D200AD5A32 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				1CF4DB902DA8B8D200AD5A32 /* TapToTrackNotificationService */,
+			);
+			name = TapToTrackNotificationService;
+			packageProductDependencies = (
+			);
+			productName = TapToTrackNotificationService;
+			productReference = 1CF4DB8F2DA8B8D200AD5A32 /* TapToTrackNotificationService.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -183,8 +297,8 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1620;
-				LastUpgradeCheck = 1620;
+				LastSwiftUpdateCheck = 1630;
+				LastUpgradeCheck = 1630;
 				TargetAttributes = {
 					1CBB70B02D948F0F0099286E = {
 						CreatedOnToolsVersion = 16.2;
@@ -196,6 +310,9 @@
 					1CBB70CA2D948F100099286E = {
 						CreatedOnToolsVersion = 16.2;
 						TestTargetID = 1CBB70B02D948F0F0099286E;
+					};
+					1CF4DB8E2DA8B8D200AD5A32 = {
+						CreatedOnToolsVersion = 16.3;
 					};
 				};
 			};
@@ -216,6 +333,7 @@
 				1CBB70B02D948F0F0099286E /* TapToTrack */,
 				1CBB70C02D948F100099286E /* TapToTrackTests */,
 				1CBB70CA2D948F100099286E /* TapToTrackUITests */,
+				1CF4DB8E2DA8B8D200AD5A32 /* TapToTrackNotificationService */,
 			);
 		};
 /* End PBXProject section */
@@ -225,6 +343,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CF4DBA72DA99C6100AD5A32 /* README.md in Resources */,
+				1CF4DBA82DA99C6100AD5A32 /* CHANGELOG.md in Resources */,
+				1CF4DBA92DA99C6100AD5A32 /* LICENCE (for the flic2lib binary).txt in Resources */,
+				1CF4DBAA2DA99C6100AD5A32 /* LICENCE (for the documentation and source code).txt in Resources */,
+				1CF4DBAB2DA99C6100AD5A32 /* .gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +359,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		1CBB70C92D948F100099286E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1CF4DB8D2DA8B8D200AD5A32 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -266,6 +396,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1CF4DB8B2DA8B8D200AD5A32 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -278,6 +415,11 @@
 			isa = PBXTargetDependency;
 			target = 1CBB70B02D948F0F0099286E /* TapToTrack */;
 			targetProxy = 1CBB70CC2D948F110099286E /* PBXContainerItemProxy */;
+		};
+		1CF4DB952DA8B8D200AD5A32 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1CF4DB8E2DA8B8D200AD5A32 /* TapToTrackNotificationService */;
+			targetProxy = 1CF4DB942DA8B8D200AD5A32 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -317,9 +459,11 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = MLF632K4X3;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "$(PROJECT_DIR)";
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -341,6 +485,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "TapToTrack-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -380,9 +525,11 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = MLF632K4X3;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "$(PROJECT_DIR)";
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -397,6 +544,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "TapToTrack-Bridging-Header.h";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -406,13 +554,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TapToTrack/TapToTrack.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TapToTrack/Preview Content\"";
-				DEVELOPMENT_TEAM = MLF632K4X3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TapToTrack/Info.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "This app uses Bluetooth to connect to Flic buttons.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs location access to discover Flic buttons via Bluetooth.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -426,7 +576,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = torm.TapToTrack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "TapToTrack/TapToTrack-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
+				"SYSTEM_FRAMEWORK_SEARCH_PATHS[arch=*]" = "$(PROJECT_DIR)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -436,13 +588,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TapToTrack/TapToTrack.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TapToTrack/Preview Content\"";
-				DEVELOPMENT_TEAM = MLF632K4X3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TapToTrack/Info.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "This app uses Bluetooth to connect to Flic buttons.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs location access to discover Flic buttons via Bluetooth.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -456,7 +610,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = torm.TapToTrack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "TapToTrack/TapToTrack-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
+				"SYSTEM_FRAMEWORK_SEARCH_PATHS[arch=*]" = "$(PROJECT_DIR)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -467,7 +623,6 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = MLF632K4X3;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				MARKETING_VERSION = 1.0;
@@ -486,7 +641,6 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = MLF632K4X3;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				MARKETING_VERSION = 1.0;
@@ -504,7 +658,6 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = MLF632K4X3;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = torm.TapToTrackUITests;
@@ -521,7 +674,6 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = MLF632K4X3;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = torm.TapToTrackUITests;
@@ -530,6 +682,60 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = TapToTrack;
+			};
+			name = Release;
+		};
+		1CF4DB982DA8B8D200AD5A32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TapToTrackNotificationService/TapToTrackNotificationService.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TapToTrackNotificationService/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TapToTrackNotificationService;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = torm.TapToTrack.TapToTrackNotificationService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1CF4DB992DA8B8D200AD5A32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TapToTrackNotificationService/TapToTrackNotificationService.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TapToTrackNotificationService/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TapToTrackNotificationService;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = torm.TapToTrack.TapToTrackNotificationService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -568,6 +774,15 @@
 			buildConfigurations = (
 				1CBB70DC2D948F110099286E /* Debug */,
 				1CBB70DD2D948F110099286E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1CF4DB9A2DA8B8D200AD5A32 /* Build configuration list for PBXNativeTarget "TapToTrackNotificationService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1CF4DB982DA8B8D200AD5A32 /* Debug */,
+				1CF4DB992DA8B8D200AD5A32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -10,6 +10,7 @@ struct FlicScanView: View {
     @State private var isScanning = false
     @State private var scanStatus = "Idle"
     @State private var connectedButtonName: String?
+    @ObservedObject private var flicManager = FlicManager.shared
 
     var body: some View {
         VStack(spacing: 20) {
@@ -25,7 +26,11 @@ struct FlicScanView: View {
                 .padding()
 
             Button(action: {
-                if isScanning {
+                if flicManager.isButtonConnected {
+                    // Optionally implement disconnect here (e.g. stop scan or disconnect)
+                    scanStatus = "🔌 Disconnected (not implemented)"
+                    // TODO: You can add a disconnect function if needed
+                } else if isScanning {
                     FLICManager.shared()?.stopScan()
                     scanStatus = "🔴 Scan aborted"
                 } else {
@@ -34,7 +39,7 @@ struct FlicScanView: View {
                 }
                 isScanning.toggle()
             }) {
-                Text(isScanning ? "Abort Scan" : "Start Scan")
+                Text(flicManager.isButtonConnected ? "Disconnect" : (isScanning ? "Abort Scan" : "Start Scan"))
                     .frame(maxWidth: .infinity)
                     .padding()
                     .background(isScanning ? Color.red : Color.blue)

@@ -9,11 +9,18 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject var viewModel: TapLogViewModel
+    @ObservedObject private var flicManager = FlicManager.shared
 
     var body: some View {
         NavigationView {
             VStack {
                 Spacer()
+                Text(flicManager.isButtonConnected
+                     ? "✅ Your Flic button is connected!"
+                     : "⚠️ You are not connected to a Flic button.")
+                    .font(.headline)
+                    .foregroundColor(flicManager.isButtonConnected ? .green : .red)
+                    .padding(.bottom)
 
                 // Top: Three press buttons
                 HStack(spacing: 16) {

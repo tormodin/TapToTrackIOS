@@ -22,8 +22,12 @@ struct TapToTrackApp: App {
                 }
                 .onAppear {
                     FlicManager.shared.configure()
+                    FlicManager.shared.refreshConnectionStatus()
                     viewModel.processQueuedPushes()
-                } 
+                }
+                .onReceive(NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)) { _ in
+                    FlicManager.shared.refreshConnectionStatus()
+                }
 
         }
     }

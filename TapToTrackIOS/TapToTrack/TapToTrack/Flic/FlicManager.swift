@@ -7,9 +7,11 @@
 
 import Foundation
 
-class FlicManager: NSObject {
+class FlicManager: NSObject, ObservableObject {
     static let shared = FlicManager()
+    @Published var isButtonConnected: Bool = false
     var onButtonConnected: ((String) -> Void)?
+
     
     private override init() {
         super.init()
@@ -64,15 +66,32 @@ extension FlicManager: FLICManagerDelegate, FLICButtonDelegate {
     }
     func buttonIsReady(_ button: FLICButton) {
         print("✅ Button is ready: \(button.name ?? "Unnamed")")
+        self.isButtonConnected = true
     }
     func manager(_ manager: FLICManager, didUpdate state: FLICManagerState) {
         print("⚙️ Manager state updated: \(state.rawValue)")
+    }
+    func refreshConnectionStatus() {
+        let buttons = FLICManager.shared()?.buttons() ?? []
+        var anyConnected = false
+
+        for button in buttons {
+            if button.isReady {
+                anyConnected = true
+                break
+            }
+        }
+
+        DispatchQueue.main.async {
+            self.isButtonConnected = anyConnected
+        }
     }
 
     func buttonDidConnect(_ button: FLICButton) {
         let name = button.name ?? "Unnamed"
         print("✅ Connected to: \(name)")
         onButtonConnected?(name)
+        self.isButtonConnected = true
     }
 
     func button(_ button: FLICButton, didFailToConnectWithError error: Error?) {
@@ -81,8 +100,8 @@ extension FlicManager: FLICManagerDelegate, FLICButtonDelegate {
 
     func button(_ button: FLICButton, didDisconnectWithError error: Error?) {
         print("🔌 Disconnected: \(button.name ?? "Unnamed") – \(error?.localizedDescription ?? "Unknown error")")
+        self.isButtonConnected = false
     }
-
     func button(_ button: FLICButton, didReceiveButtonClick queued: Bool, age: Int) {
         print("🟦 Single click received")
         Task { @MainActor in

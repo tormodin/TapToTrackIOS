@@ -7,12 +7,15 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @AppStorage("hapticsEnabled") private var hapticsEnabled = true
     @EnvironmentObject var viewModel: TapLogViewModel
     @State private var showConfirmation = false
 
     var body: some View {
         NavigationView {
             VStack(spacing: 20) {
+                Toggle("Vibrate on Push", isOn: $hapticsEnabled)
+                    .padding(.horizontal)
                 
                 // MARK: - Navigation to Pairing Screen
                 NavigationLink(destination: FlicScanView()) {

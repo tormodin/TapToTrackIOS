@@ -7,7 +7,8 @@
 
 import Foundation
 import SwiftUI
-
+import UIKit
+import AudioToolbox
 @MainActor
 class TapLogViewModel: ObservableObject {
     static let shared = TapLogViewModel()
@@ -47,6 +48,7 @@ class TapLogViewModel: ObservableObject {
         logs.insert(newLog, at: 0)
         print("addLog called with type: \(type), total logs: \(logs.count)")
         saveLogs()
+        vibrateIfEnabled()
     }
 
 
@@ -82,6 +84,13 @@ class TapLogViewModel: ObservableObject {
         }
 
         suite?.removeObject(forKey: "pendingPushes")
+    }
+    private func vibrateIfEnabled() {
+        let enabled = UserDefaults.standard.bool(forKey: "hapticsEnabled")
+        if enabled {
+            let generator = UIImpactFeedbackGenerator(style: .heavy)
+            generator.impactOccurred()
+        }
     }
 
 

@@ -8,8 +8,6 @@
 import Foundation
 import SwiftUI
 
-
-
 struct PushLogView: View {
     @ObservedObject var viewModel: TapLogViewModel
     @State private var isSharing = false
@@ -21,7 +19,8 @@ struct PushLogView: View {
 
     var body: some View {
         VStack(spacing: 16) {
-            
+
+            // Share button
             if let shareURL = shareURL {
                 ShareLink(item: shareURL) {
                     Label("Share Pushes", systemImage: "square.and.arrow.up")
@@ -35,6 +34,7 @@ struct PushLogView: View {
                 }
                 .padding()
             }
+
             // Summary bars
             HStack {
                 StatBox(title: "Today", count: count(for: .day))
@@ -43,14 +43,27 @@ struct PushLogView: View {
             }
             .padding(.horizontal)
 
-            // Log list
+            // Log list with editable notes
             List(viewModel.logs) { log in
-                VStack(alignment: .leading) {
+                VStack(alignment: .leading, spacing: 4) {
                     Text("Type: \(log.type.capitalized)")
                     Text(log.timestamp.formatted(date: .abbreviated, time: .standard))
                         .font(.caption)
                         .foregroundColor(.gray)
+
+                    TextField("Add a note...", text: Binding(
+                        get: { log.note ?? "" },
+                        set: { newValue in
+                            if let index = viewModel.logs.firstIndex(where: { $0.id == log.id }) {
+                                viewModel.logs[index].note = newValue
+                                viewModel.saveLogs()
+                            }
+                        }
+                    ))
+                    .font(.caption)
+                    .textFieldStyle(.roundedBorder)
                 }
+                .padding(.vertical, 4)
             }
         }
         .navigationTitle("Your Pushes")
@@ -58,23 +71,16 @@ struct PushLogView: View {
             viewModel.loadLogs()
         }
     }
-    private func generateShareText() -> String {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .short
-        formatter.timeStyle = .short
 
-        return viewModel.logs.map { log in
-            "\(formatter.string(from: log.timestamp)) — \(log.type.capitalized)"
-        }.joined(separator: "\n")
-    }
-    
+    // MARK: - File generation
     private func generateShareFile() -> URL {
         let formatter = DateFormatter()
         formatter.dateStyle = .short
         formatter.timeStyle = .short
 
         let content = viewModel.logs.map { log in
-            "\(formatter.string(from: log.timestamp)) — \(log.type.capitalized)"
+            let note = log.note?.isEmpty == false ? " — Note: \(log.note!)" : ""
+            return "\(formatter.string(from: log.timestamp)) — \(log.type.capitalized)\(note)"
         }.joined(separator: "\n")
 
         let tempURL = FileManager.default.temporaryDirectory.appendingPathComponent("PushLog.txt")
@@ -88,7 +94,7 @@ struct PushLogView: View {
 
         return tempURL
     }
-    
+
     // MARK: - Summary logic
     private func count(for range: TimeRange) -> Int {
         let calendar = Calendar.current

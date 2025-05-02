@@ -34,6 +34,10 @@ struct PushLogView: View {
                 }
                 .padding()
             }
+            NavigationLink(destination: PieChartsView(viewModel: viewModel)) {
+                Label("Pie Charts", systemImage: "chart.pie")
+            }
+            .padding()
 
             // Summary bars
             HStack {
